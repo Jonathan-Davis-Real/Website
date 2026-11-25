@@ -21,7 +21,9 @@ import insta2 from '../assets/images/Social/Instagram2.png'
 import email1 from '../assets/images/Social/Email1.png'
 import email2 from '../assets/images/Social/Email2.png'
 
-function HomePage({ lineHeightPixels, currentFrame, audioRef, playHoverSound, muteState, marginSize }) {
+import sticky from '../assets/images/Sticky/Sticky.png'
+
+function HomePage({ lineHeightPixels, currentFrame, audioRef, playHoverSound, muteState, marginSize, onNavigate }) {
     const mainRef = useRef(null);
 
     const meFrames = [me1, me2];
@@ -43,7 +45,7 @@ function HomePage({ lineHeightPixels, currentFrame, audioRef, playHoverSound, mu
             fontSize: `${lineHeightPixels}px` 
             }
         } ref={mainRef}>
-            <div>
+            <div className = "aboutMe">
                 <p style={
                     {
                     lineHeight: `${2 * lineHeightPixels}px`,
@@ -78,6 +80,37 @@ function HomePage({ lineHeightPixels, currentFrame, audioRef, playHoverSound, mu
                     />
 
                 <br/><br/>
+            </div>
+
+            <div className = "projects">
+                <button
+                    type="button"
+                    className="project-link"
+                    onClick={() => onNavigate('schoolProject1Page')}
+                    onMouseEnter={() => playHoverSound && playHoverSound()}
+                >
+                    <span className="project-title">Project1</span>
+                    <img 
+                        src = {sticky}
+                        style={{ height: `${lineHeightPixels * 4}px` }}
+                        alt="Sticky note"
+                    />
+                </button>
+                <button
+                    type="button"
+                    className="project-link"
+                    onClick={() => onNavigate('schoolProject2Page')}
+                    onMouseEnter={() => playHoverSound && playHoverSound()}
+                >
+                    <span className="project-title">Project2</span>
+                    <img 
+                        src = {sticky}
+                        style={{ height: `${lineHeightPixels * 4}px` }}
+                        alt="Sticky note"
+                    />
+                </button>
+
+
             </div>
 
             <div className = "socials"> 

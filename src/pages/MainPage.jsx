@@ -36,6 +36,8 @@ import paperSound9 from '../assets/sounds/paperSound/paperSound9.mp3';
 import HomePage from './HomePage.jsx';
 import AboutMePage from './AboutMePage.jsx';
 import CurrentProjects from './CurrentProjects.jsx';
+import SchoolProject1 from './SchoolProject1.jsx';
+import SchoolProject2 from './SchoolProject2.jsx';
 import SnakePage from './games/snake.jsx';
 
 import { Tooltip } from 'react-tooltip';
@@ -279,6 +281,7 @@ function MainPage() {
                                 playHoverSound={playHoverSound}
                                 muteState={muteState}
                                 marginSize={marginSize}
+                                onNavigate={setCurrentPage}
                             />
                             );
                         case 'aboutMePage':
@@ -298,6 +301,20 @@ function MainPage() {
                                 audioRef={audioRef}
                                 playHoverSound={playHoverSound}
                                 muteState={muteState}
+                                marginSize={marginSize}
+                            />
+                            );
+                        case 'schoolProject1Page':
+                            return (
+                            <SchoolProject1
+                                lineHeightPixels={lineHeightPixels}
+                                marginSize={marginSize}
+                            />
+                            );
+                        case 'schoolProject2Page':
+                            return (
+                            <SchoolProject2
+                                lineHeightPixels={lineHeightPixels}
                                 marginSize={marginSize}
                             />
                             );

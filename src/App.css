@@ -204,6 +204,9 @@ image, img {
 .page-home {
   font-family: "Short Stack", cursive;
 
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  align-items: start;
   padding-top: 0.3rem;
   padding-left: 0.4rem;
   padding-right: 0.4rem;
@@ -212,6 +215,72 @@ image, img {
   opacity: 0.8;
   min-height: 720px;
   position: relative;
+}
+
+.aboutMe,
+.projects {
+  min-width: 0;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+.project-link {
+  position: relative;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.project-link img {
+  display: block;
+}
+
+.project-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.school-project-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.school-project-layout > img {
+  max-width: 50%;
+  object-fit: contain;
+}
+
+.school-project-layout > .about-section {
+  flex: 1;
+}
+
+@media (max-width: 700px) {
+  .school-project-layout {
+    flex-direction: column;
+  }
+
+  .school-project-layout > img {
+    width: 100%;
+    max-width: 30rem;
+    height: auto !important;
+    align-self: center;
+  }
 }
 
 .page-about {
